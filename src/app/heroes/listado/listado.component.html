@@ -1,0 +1,30 @@
+<h1>Componente listado</h1>
+
+<h2>Directiva ngIf</h2>
+<!--Solo aparece el contendo si el ngIf es true-->
+<!--ngIf ya reconoce que heroeBorrado está inicializado 'vacio' ; por eso no hace falta especificarlo-->
+<div *ngIf="heroeBorrado; else noBorrado">
+  <h3>Heroe Borrado: <small>{{ heroeBorrado }}</small></h3>
+</div>
+
+<!--Referencia local '#'-->
+<ng-template #noBorrado>
+  <h3>No ha borrado nadas</h3>
+</ng-template>
+
+
+<button (click)="borrarHeroe()">BORRAR</button>
+
+<h2>Directiva ngFor</h2>
+<h3>Listado de Heroes</h3>
+<!--Forma para recorrer los array-->
+<ul>
+  <!--Por nomra general, no se suele utilidar el index
+  <li *ngFor="let heroe of heroes; let i = index ">
+    heroe {{i}}: {{ heroe }}
+  </li>-->
+  <li *ngFor="let heroe of heroes">
+    {{ heroe }}
+  </li>
+</ul>
+
