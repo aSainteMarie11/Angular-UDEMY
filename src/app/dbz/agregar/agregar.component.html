@@ -1,0 +1,32 @@
+<h3>Agregar</h3>
+    <hr>
+    <!--Cuando trabajemos con formularios, hay que importar el "FormsModule"-->
+    <!--Los paréntesis son para mandar eventos-->
+    <form (ngSubmit)="agregar()">
+      <!--Los corchetes "[]" sirven para indicarle que queremos que coja el valor en el lado de nuestro componente
+        Esta sería la forma más "tediosa" de declarar los eventos
+      <input
+        type="text"
+        placeholder="Perosnaje"
+        [value]="nuevo.nombre"
+        (input)="cambiarNombre( $event )"/>-->
+
+        <!--Esta es la forma correcta de trabajar con Angular y los formularios
+        Se utiliza ngModel y se le pone corechetes y paréntesis para recibir/escuchar y emitir el evento-->
+        <input
+        type="text"
+        placeholder="Personaje"
+        name="nombre"
+        [(ngModel)]="nuevo.nombre"/>
+
+      <input
+        type="number"
+        placeholder="Poder"
+        name="poder"
+        [(ngModel)]="nuevo.poder"/>
+
+      <button type="submit">
+        Agregar
+      </button>
+
+    </form>

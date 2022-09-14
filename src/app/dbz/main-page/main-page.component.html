@@ -1,0 +1,18 @@
+<h1>Dragon Ball Z</h1>
+<hr>
+
+ <!--El | number es im "Pipe" que sirve para especificar cómo tiene que salir de cara al cliente-->
+<div class="row">
+
+  <div class="col">
+    <!--El primero [] hace referencia al component de la clase hijo y
+      el segundo hace referencia al component de la la clase padre-->
+    <app-personajes></app-personajes>
+
+  </div>
+
+  <div class="col">
+    <app-agregar [nuevo]="nuevo"></app-agregar>
+  </div>
+
+</div>
